@@ -5,30 +5,25 @@ public class Main {
   public static void main(String[] args) throws IOException {
     BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    int num = Integer.parseInt(br.readLine()), cnt_a = 1, cnt_b = 0, rlt = 0;
+    int num = Integer.parseInt(br.readLine()), cnt = 0, res = 0, rlt = 0;
     String str = br.readLine();
-    char ch = str.charAt(0);
-    boolean std = false;
+    char std = '0';
 
-    for(int i = 1; i < num; i++) {
-      if(str.charAt(i) == ch) {
-        if(!std) cnt_a++;
-        else cnt_b++;
-      }else {
-        ch = str.charAt(i);
-        std = !std;
-
-        if(cnt_b == 0) cnt_b = 1;
-        else {
-          rlt = Math.max(rlt, 2 * Math.min(cnt_a, cnt_b));
-          cnt_a = cnt_b;
-          cnt_b = 1;
-          std = !std;
-        }
+    for (int i = 0; i <num; i++) {
+      char tmp = str.charAt(i);
+      if(std != tmp) {
+        rlt = Math.max(rlt, Math.min(cnt, res));
+        res = cnt;
+        std = tmp;
+        cnt = 1;
+        continue;
       }
+
+      cnt++;
     }
-    
-    bw.write(String.valueOf(Math.max(rlt, 2 * Math.min(cnt_a, cnt_b))));
+
+    rlt = Math.max(rlt, Math.min(cnt, res));
+    bw.write(String.valueOf(rlt * 2));
     bw.close();
   }
 }
