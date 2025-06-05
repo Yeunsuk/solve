@@ -7,7 +7,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
         
-        bw.write(n > 89 ? 'A' : n > 79 ? 'B' : n > 69 ? 'C' : n > 59 ? 'D' : 'F');
+        bw.write("FFFFFFDCBAA".charAt(n / 10));
         bw.close();
     }
 }
