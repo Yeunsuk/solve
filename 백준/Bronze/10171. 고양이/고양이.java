@@ -1,1 +1,1 @@
-interface Main{static void main(String[]a){System.out.print("\\    /\\\n )  ( ')\n(  /  )\n \\(__)|\n");}}
+interface Main{static void main(String[]a){System.out.print("\\    /\\\n )  ( ')\n(  /  )\n \\(__)|");}}
