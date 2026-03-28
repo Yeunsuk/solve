@@ -1,0 +1,1 @@
+interface Main{static void main(String[]a){int n=new java.util.Scanner(System.in).nextInt();System.out.print(n*(n+1)*(n+2)/2);}}
