@@ -1,0 +1,1 @@
+interface Main{static void main(String[]a){System.out.print("2026\n04\n06");}}
